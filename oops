@@ -1,175 +1,245 @@
 polymorphism
-=========
-
+=============
 <?php
-interface shape {  
-	function area();
-}
+	interface shape {
+		function area();
+	}
+	
 #=============================================
-class square implements shape {
-	var $a;
-	function area(){
-		return intval($this->a * $this->a);
+	class square implements shape {
+		var $a;
+		function area(){
+			return intval($this->a * $this->a);
+		}
+
 	}
-}
+	
+	class rect implements shape {
+		var $l,$b;
+		function area(){
+			return intval($this->l * $this->b);
+		}
 
-class rect implements shape {
-	var $l,$b;
-	function area(){
-		return intval($this->l * $this->b);
 	}
-}
-##############################################
-$Tile = new square;
-$Tile->a = 4;
-echo $Tile->area();
 
-$Book = new rect;
-$Book->l = 4 ; $Book->b =3;
-echo $Book->area();
-
-?>
-============================================================================
+	##############################################
+	$Tile = new square;
+	$Tile->a = 4;
+	echo $Tile->area();
+	$Book = new rect;
+	$Book->l = 4 ;
+	$Book->b =3;
+	echo $Book->area();
+	?>
+=====================================================
 ABS:
-
 <?php
+	abstract
+	class fruit {
+		
+		function eatme(){
+		}
 
-abstract class fruit {  
-	function eatme(){}
-	function buyme(){	echo "You can me directly from farm" ."\n <br>" ;	}
-	function goodat(){}
-	function my_color(){}
-}
+		
+		function buyme(){
+			echo "You can me directly from farm" ."\n <br>" ;
+		}
 
-class mango extends fruit {	
-var $mycolor;
-	function eatme(){	echo "Eat me! I\"m so sweet" ."\n <br>";}
-	//function goodat(){	echo "I\"m good at proteins" ."\n <br>" ;}
-	function my_color(){	echo "My color is " .$this->mycolor."\n <br>";}
-}
+		
+		function goodat(){
+		}
 
+		
+		function my_color(){
+		}
 
-//$apple = new fruit;
-//$apple->eatme();
-/////////////////////////////////////////////////////////////////
-$malgova = new mango ;
-$malgova_clon=clone ($malgova);
-$malgova->eatme();$malgova->buyme();//$malgova->goodat();
-//////////////////////////////////////////////////////////////////
-$malgova_clon->mycolor="Green_clone";
-$malgova_clon->my_color();
-$malgova->mycolor="Green";
-$malgova->my_color();
-//////////////////////////////////////////////////////////////////
-echo "<pre>";
-var_dump($malgova);
-echo "</pre>";
-echo "<pre>";
-var_dump($malgova_clon);
-echo "</pre>";
+	}
 
-/*$apple->eatme();$apple->buyme();
+	
+	class mango extends fruit {
+		var $mycolor;
+		function eatme(){
+			echo "Eat me! I\"m so sweet" ."\n <br>";
+		}
+
+		//function goodat(){	echo "I\"m good at proteins" ."\n <br>" ;}
+		function my_color(){
+			echo "My color is " .$this->mycolor."\n <br>";
+		}
+
+	}
+
+	//$apple = new fruit;
+	//$apple->eatme();
+	/////////////////////////////////////////////////
+	$malgova = new mango ;
+	$malgova_clon=clone ($malgova);
+	$malgova->eatme();
+	$malgova->buyme();
+	//$malgova->goodat();
+	//////////////////////////////////////////////////
+	$malgova_clon->my_color();
+	$malgova->mycolor="Green";
+	$malgova->my_color();
+	///////////////////////////////////////////////////
+	echo "<pre>";
+	var_dump($malgova);
+	echo "</pre>";
+	echo "<pre>";
+	var_dump($malgova_clon);
+	echo "</pre>";
+	/*$apple->eatme();$apple->buyme();
 $apple->mycolor="red";
 $apple->my_color();
 */
-?>
-===================================================================================
+	?>
+============================================================
 ABS INTERFACE
-
 <?php
-###########################################################################
-interface fruit_i {
+	########################################################
+	interface fruit_i {
+		#var $color ="";		#Fatal error: Interfaces may not include member variables
+		#function eatme(){};	#Fatal error: Interface function fruit_i::eatme() cannot contain body
+		function eatme();
+		function buyme();
+		function goodat();
+	}
 
-  #var $color ="";		#Fatal error: Interfaces may not include member variables
-	#function eatme(){};	#Fatal error: Interface function fruit_i::eatme() cannot contain body
-	function eatme();
-	function buyme();
-	function goodat();
-}
-class mango_i implements fruit_i {	
-	function eatme(){	echo "Eat me! I\"m so sweet" ."\n <br>";}
-	function buyme(){	echo "you can buy me direcly from farm"."\n <br>";}
-	function goodat(){	echo "I\"m good at proteins" ."\n <br>" ;}
-}
-###########################################################################
-abstract class fruit_a {	
-
-	var $color ="";
-	 
-	function __construct(){}
-	function eatme(){}
-	function buyme(){ echo "You can me directly from farm" ."\n <br>" ;}
-	function goodat(){ echo "I\"m good at proteins" ."\n <br>" ;}
-}
-class mango_a extends fruit_a {
 	
-	function __construct(){echo "My color is ".$this->color."\n <br>"; }	#My color is <<>>
-	function eatme(){	echo "Eat me! I\"m so sweet and delicious" ."\n <br>";}
-	function goodat(){	echo "I\"m good at proteins and natural minerals" ."\n <br>" ;}
-	function __destruct(){ echo "My color is ".$this->color."\n <br>";}		#My color is Yellowish
-}
-###########################################################################
+	class mango_i implements fruit_i {
+		function eatme(){
+			echo "Eat me! I\"m so sweet" ."\n <br>";
+		}
 
-#$apple = new fruit_i;		# Fatal error: Cannot instantiate interface fruit_i 
-#$apple = new fruit_a;		# Fatal error: Cannot instantiate abstract class fruit_a
+		
+		function buyme(){
+			echo "you can buy me direcly from farm"."\n <br>";
+		}
 
-$malgova = new mango_i ;
-$malgova->eatme();$malgova->buyme();$malgova->goodat();
-unset($malgova);
+		
+		function goodat(){
+			echo "I\"m good at proteins" ."\n <br>" ;
+		}
 
-$malgova = new mango_a ;
-$malgova->color = "Yellowish";
-$malgova->eatme();$malgova->buyme();$malgova->goodat();
-unset($malgova);
-?>
+	}
 
-===================================================================================================
+	#######################################################
+	abstract
+	class fruit_a {
+		var $color ="";
+		function __construct(){
+		}
 
+		
+		function eatme(){
+		}
+
+		
+		function buyme(){
+			echo "You can me directly from farm" ."\n <br>" ;
+		}
+
+		
+		function goodat(){
+			echo "I\"m good at proteins" ."\n <br>" ;
+		}
+
+	}
+
+	
+	class mango_a extends fruit_a {
+		function __construct(){
+			echo "My color is ".$this->color."\n <br>";
+		}
+
+		#My color is <<>>
+		function eatme(){
+			echo "Eat me! I\"m so sweet and delicious" ."\n <br>";
+		}
+
+		
+		function goodat(){
+			echo "I\"m good at proteins and natural minerals" ."\n <br>" ;
+		}
+
+		
+		function __destruct(){
+			echo "My color is ".$this->color."\n <br>";
+		}
+
+		#My color is Yellowish
+	}
+
+	###################################################
+	#$apple = new fruit_i;		# Fatal error: Cannot instantiate interface fruit_i 
+	#$apple = new fruit_a;		# Fatal error: Cannot instantiate abstract class fruit_a
+	$malgova = new mango_i ;
+	$malgova->eatme();
+	$malgova->buyme();
+	$malgova->goodat();
+	unset($malgova);
+	$malgova = new mango_a ;
+	$malgova->color = "Yellowish";
+	$malgova->eatme();
+	$malgova->buyme();
+	$malgova->goodat();
+	unset($malgova);
+	?>
+=======================================================
 POLYMORPHISM EXAMPLE
-
 <?php
-class math {
-        function __call($name, $arg) {
-  		switch ($name) {
-		case 'add':
-			if(count($arg)==2) return $arg[0] + $arg[1]; 
-			else if (count($arg)==3) return $arg[0] + $arg[1] + $arg[2]; 
-			else if (count($arg)==4) return $arg[0] + $arg[1] + $arg[2]+ $arg[3];  
-			else if (count($arg)==5) return $arg[0] + $arg[1]+ $arg[2]+ $arg[3]+ $arg[4];  
-			else if (count($arg)==6) return $arg[0] + $arg[1]+ $arg[2]+ $arg[3]+ $arg[4]+ $arg[5] ;
-			else return "Too longgg..."; break; 
-		case 'sub':
-			return $arg[0] - $arg[1]; break;
-		case 'div':
-			return $arg[0] / $arg[1]; break;
-			       }
+	class math {
+		function __call($name, $arg) {
+			switch ($name) {
+				case 'add':
+				if(count($arg)==2) 
+				return $arg[0] + $arg[1]; else
+				if (count($arg)==3) 
+				return $arg[0] + $arg[1] + $arg[2]; else
+				if (count($arg)==4) 
+				return $arg[0] + $arg[1] + $arg[2]+ $arg[3]; else
+				if (count($arg)==5) 
+				return $arg[0] + $arg[1]+ $arg[2]+ $arg[3]+ $arg[4]; else
+				if (count($arg)==6) 
+				return $arg[0] + $arg[1]+ $arg[2]+ $arg[3]+ $arg[4]+ $arg[5] ; 
+				else return "Too longgg...";
+				break;
+				case 'sub':
+				return $arg[0] - $arg[1];
+				break;
+				case 'div':
+				return $arg[0] / $arg[1];
+				break;
 			}
+
+	}
+
 }
 
 $calculator = new math;
-echo $calculator->add(2,3);			echo "<br>";
-echo $calculator->add(2,3,4);		echo "<br>";
-echo $calculator->add(2,3,4,5);		echo "<br>";
-echo $calculator->add(2,3,4,5,6);	echo "<br>";
-echo $calculator->add(2,3,4,5,6,7);	echo "<br>";
+echo $calculator->add(2,3);
+echo "<br>";
+echo $calculator->add(2,3,4);
+echo "<br>";
+echo $calculator->add(2,3,4,5);
+echo "<br>";
+echo $calculator->add(2,3,4,5,6);
+echo "<br>";
+echo $calculator->add(2,3,4,5,6,7);
+echo "<br>";
 ?>
-
-===============================================================================================
+===============================================
 static #
-
 <?php
-
 class fruit {
-
-  var $color ;
-	
-	static function saye(){
+	var $color ;
+	static
+	function saye(){
 		print "I`m fruit";
 	}
+
 }
 
 echo fruit::saye();
-
 ?>
-
-====================================================================================================
+==================================================
