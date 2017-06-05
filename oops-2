@@ -1,0 +1,72 @@
+constructor:
+============
+Constructor is a magic method which is invoked at the time of creating an instance of a class.
+in php5 it is __construct(). In php4 it is the name of the class itself
+
+destructor:
+============
+destructor is a magic method which is invoked at the time of destruction of an instance of a class.
+In php5 it is __destruct()
+
+Inheritance:
+============
+Inheritance is an oops concept. when a parent class has a public or protected method or property, it is available in its child class without defining inside child class.
+
+static:
+=======
+if a method is defined as static, it can be called without creating an instance of the class using scope resolution operator ::
+
+class constants are always statically called.
+
+autoloading classes:
+====================
+__autoload is a magic method. This method is called by php when a non existent classes in a php script.
+The name of the class is sent as an argument to this method and it can include the class. reference: http://www.php.net/manual/en/language.oop5.autoload.php
+
+visibility:
+===========
+public: properties and methods are visible everywhere.
+protected: properties and methods are visible at the same class and child classes
+private: properties and methods are visible at the same class alone.
+
+if you try to access protected / private property or method in the instance of the class like the following, you will get fatal error
+echo $obj->protected; // Fatal Error
+echo $obj->private; // Fatal Error
+
+refernce: http://www.php.net/manual/en/language.oop5.visibility.php
+
+abstract class:
+===============
+you cannot create instance for abstract class.
+you can extend abstract class and create instance for the extending class
+All the methods marked as abstract should be defined in the extending class
+all the visible methods that are not marked as abstract are available in the extending class (child class) 
+
+Interfaces:
+===========
+Interfaces are a type of abstract classes.
+In interfaces you cannot define methods. Only function declaration without function body is allowed.
+All the methods declared in an interface should be defined by the class implementing that interface
+A class can implement multiple interfaces (This effectively implements multiple inheritance in php)
+
+overloading:
+============
+
+creating methods and properties at runtime is called property overloading / method overloading.
+In php, property overloading can be done by magic methods like __set, __unset, __isset, __get
+method overloading can be done by magic methods like __call and __call_static
+
+                                             
+magic methods
+=============
+magic methods are functions that are call not by the user by php itself at runtime at certain events.
+examples: __call, __set, __unset, __autoload, __construct, __destruct, __sleep, __wakeup etc.
+
+polymorphism:
+============
+polymorphism means "having multiple forms"
+a same method or property can behave differently at different situations.
+for example, animal class can have a method called speak().
+when a class called cat extends animal, the class will return "meow" when you call speak()
+when a class called dog extends animal, the class will return "wow wow!!" when you call speak()
+etc
