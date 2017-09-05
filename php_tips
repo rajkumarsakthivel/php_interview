@@ -88,3 +88,15 @@ Innovative Founder
 Laravel is a very popular PHP framework, used by more than 30,000 developers around the world. 
 One of the reasons it’s such a hit is that it allows web applications to be constructed quickly 
 and makes them easy to maintain afterwards.
+
+The source code for Laravel is hosted on GitHub and is distributed under an open source licence, so it’s available for anyone to use. It was first introduced in beta in 2011 and has since gone through several enhancements adding more features including database seeding, scheduling and more besides.
+
+The third version of the platform saw the introduction of a command line interface called Artisan. This is mapped to sub-commands which simplifies the process of building and managing Laravel-based apps.
+
+It works on a modular basis, with lots of pre-built functions available. This means that applications can be constructed quickly with no need for hours of work and lots of lines of code. Things like form validation and user authentication are built into Laravel which means they don’t need to be reinvented for each new task.
+
+The code is designed to be simple, readable and elegant, making it easy for developers to understand what’s happening even if the code was created by someone else. Testing is integrated into the Laravel framework too, so the resource intensive business of writing test procedures for each new task is reduced too.
+
+Recent additions to the platform include Laravel Scout which allows full text searches to be performed; Laravel Echo which allows for event broadcasting over the web; and Laravel Passport which is an OAuth2 ready server that makes API authentication simpler.
+
+Another reason for the popularity of the platform is its thriving and helpful developer community. There’s a plethora of documentation available which means developers have plenty to guide them when it comes to applying best practices, making decisions on implementation, and maintaining code. 
