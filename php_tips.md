@@ -6,9 +6,13 @@ setcookie("TestCookie", "", time() - 3600, "/~rasmus/", "example.com", 1);
 
 # HTTP STATUS CODES:
 1×× Informational
+
 100 Continue
+
 101 Switching Protocols
+
 102 Processing
+
 2×× Success
 200 OK
 201 Created
