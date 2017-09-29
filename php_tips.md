@@ -14,45 +14,85 @@ setcookie("TestCookie", "", time() - 3600, "/~rasmus/", "example.com", 1);
 102 Processing
 
 2×× Success
+
 200 OK
+
 201 Created
+
 202 Accepted
+
 203 Non-authoritative Information
+
 204 No Content
+
 205 Reset Content
+
 206 Partial Content
+
 207 Multi-Status
+
 208 Already Reported
+
 226 IM Used
+
 3×× Redirection
+
 300 Multiple Choices
+
 301 Moved Permanently
+
 302 Found
+
 303 See Other
+
 304 Not Modified
+
 305 Use Proxy
+
 307 Temporary Redirect
+
 308 Permanent Redirect
+
 4×× Client Error
+
 400 Bad Request
+
 401 Unauthorized
+
 402 Payment Required
+
 403 Forbidden
+
 404 Not Found
+
 405 Method Not Allowed
+
 406 Not Acceptable
+
 407 Proxy Authentication Required
+
 408 Request Timeout
+
 409 Conflict
+
 410 Gone
+
 411 Length Required
+
 412 Precondition Failed
+
 413 Payload Too Large
+
 414 Request-URI Too Long
+
 415 Unsupported Media Type
+
 416 Requested Range Not Satisfiable
+
 417 Expectation Failed
+
 418 I'm a teapot
+
 421 Misdirected Request
 422 Unprocessable Entity
 423 Locked
@@ -80,15 +120,25 @@ setcookie("TestCookie", "", time() - 3600, "/~rasmus/", "example.com", 1);
 
 # Top Ten Reasons To Use Laravel:
 Excellent Documentation.
+
 Laracasts
+
 Intuitive Syntax
+
 Practical Application Structure
+
 Artisan Code Generation
+
 Out-of-the-box User Model
+
 Blade Templating Engine
+
 Dependency Injection Made Simple
+
 Supporting Products and Packages
+
 Innovative Founder
+
 Laravel is a very popular PHP framework, used by more than 30,000 developers around the world. 
 One of the reasons it’s such a hit is that it allows web applications to be constructed quickly 
 and makes them easy to maintain afterwards.
@@ -118,17 +168,17 @@ when it comes to applying best practices, making decisions on implementation, an
 
 ## What has changed in Zend Framework 2 from Zend Framework 1?
 
-Architecture
+####Architecture
 ZF1 is based on MVC , ZF2 is based on MOVE. Huge difference. MOVE = Model Operations Views Events , MVC = Models Views Controllers. More here. Zend Framework 2 uses 100% object-oriented code and utilises most of the new features of PHP 5.3, namely namespaces, late static binding, lambda functions and closures. source
 
-Size of installation
+####Size of installation
 The latest ZF1 file is approx 30Mb and ZF2 is approx 2.5Mb (Zipped).
 
-Dependency
+####Dependency
 ZF1 is core set of libraries and very loosely coupled architecture (with respect to its competitor/player - CakePHP). ZF1 does not require much of 'gems' (as in ruby) but, can do better with plugins. ZF2 requires you to know about composer - phar and soon it may out-match any other framework. New concept : Dependency Injection for Zend fans.
 
-Certification
+####Certification
 Certification is available only for ZF1, however, there are rumours about their talks for ZF2 certs though training material is available online.
 
-Conventions
+####Conventions
 classname in ZF1 was Zend_Db_Table for class in Zend/Db/Table.php whereas in ZF2, it is class My\Auth\Adapter . Enough said.
