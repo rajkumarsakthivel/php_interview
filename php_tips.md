@@ -169,15 +169,19 @@ when it comes to applying best practices, making decisions on implementation, an
 ## What has changed in Zend Framework 2 from Zend Framework 1?
 
 ######Architecture
+
 ZF1 is based on MVC , ZF2 is based on MOVE. Huge difference. MOVE = Model Operations Views Events , MVC = Models Views Controllers. More here. Zend Framework 2 uses 100% object-oriented code and utilises most of the new features of PHP 5.3, namely namespaces, late static binding, lambda functions and closures. source
 
 ######Size of installation
+
 The latest ZF1 file is approx 30Mb and ZF2 is approx 2.5Mb (Zipped).
 
 ######Dependency
+
 ZF1 is core set of libraries and very loosely coupled architecture (with respect to its competitor/player - CakePHP). ZF1 does not require much of 'gems' (as in ruby) but, can do better with plugins. ZF2 requires you to know about composer - phar and soon it may out-match any other framework. New concept : Dependency Injection for Zend fans.
 
 ######Certification
+
 Certification is available only for ZF1, however, there are rumours about their talks for ZF2 certs though training material is available online.
 
 ######Conventions
