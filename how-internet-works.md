@@ -60,3 +60,5 @@ Connection: keep-alive
 (Where Firefox / 5.0 gzip will download the file and send it to Gecko / 20100101, the headquarters of the buyer.
 Gecko / 20100101 will provide the receipt of the receiver to the receiver of the receiver, along with the file supplied by http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd.
 Finally we have a website that has a link.
+
+Reference : https://ta.wikipedia.org/wiki/%E0%AE%87%E0%AE%A3%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D
