@@ -70,3 +70,5 @@ for example, animal class can have a method called speak().
 when a class called cat extends animal, the class will return "meow" when you call speak()
 when a class called dog extends animal, the class will return "wow wow!!" when you call speak()
 etc
+
+Credits: Poomalairaj
