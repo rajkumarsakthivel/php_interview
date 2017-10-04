@@ -173,3 +173,22 @@ Used to indicate that the requested URL exists, but the requested HTTP method is
 Whenever a resource conflict would be caused by fulfilling the request. Duplicate entries, such as trying to create two customers with the same information, and deleting root objects when cascade-delete is not supported are a couple of examples.
 500 INTERNAL SERVER ERROR
 Never return this intentionally. The general catch-all error when the server-side throws an exception. Use this only for errors that the consumer cannot address from their end.
+
+###### Dependency Injection :
+Let me tell you a real world example in non-technical form,
+
+Suppose you gives 1ltr water to me frequently, You use 10 cups of 100ml for that.
+
+So every time you come with 10 cups !....
+
+Now,suppose you got a jug of 1ltr... What would you do.?
+
+U'll use that every time, because it has functionality of doing your work easily...simple...
+
+In technical way, The 1ltr jug is your Dependency Injection,it will make your work much easier...
+
+In real application,if you want to create connections with database you just create bean for that with your desired functions like database,password,username.... And use them anywhere....by just doing @Autowired....
+
+DI simply reduce your LOC(Line Of Code).
+
+http://mnapoli.fr/introduction-dependency-injection-with-real-life-example/
