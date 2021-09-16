@@ -1,40 +1,3 @@
-constructor:
-============
-Constructor is a magic method which is invoked at the time of creating an instance of a class.
-in php5 it is __construct(). In php4 it is the name of the class itself
-
-destructor:
-============
-destructor is a magic method which is invoked at the time of destruction of an instance of a class.
-In php5 it is __destruct()
-
-Inheritance:
-============
-Inheritance is an oops concept. when a parent class has a public or protected method or property, it is available in its child class without defining inside child class.
-
-static:
-=======
-if a method is defined as static, it can be called without creating an instance of the class using scope resolution operator ::
-
-class constants are always statically called.
-
-autoloading classes:
-====================
-__autoload is a magic method. This method is called by php when a non existent classes in a php script.
-The name of the class is sent as an argument to this method and it can include the class. reference: http://www.php.net/manual/en/language.oop5.autoload.php
-
-visibility:
-===========
-public: properties and methods are visible everywhere.
-protected: properties and methods are visible at the same class and child classes
-private: properties and methods are visible at the same class alone.
-
-if you try to access protected / private property or method in the instance of the class like the following, you will get fatal error
-echo $obj->protected; // Fatal Error
-echo $obj->private; // Fatal Error
-
-refernce: http://www.php.net/manual/en/language.oop5.visibility.php
-
 abstract class:
 ===============
 you cannot create instance for abstract class.
@@ -74,6 +37,39 @@ So, abstract classes can be used to consolidate and share functionality, while i
 what the common functionality that will be shared between different instances will be, without actually building that
 functionality for them. Both can help you make your code smaller, just in different ways. There are other differences 
 between interfaces and abstract classes, but those depend on the programming language, so I won't go into those other differences here.
+
+constructor & destructor:
+============
+Constructor is a magic method which is invoked at the time of creating an instance of a class.
+
+destructor is a magic method which is invoked at the time of destruction of an instance of a class.
+
+Inheritance:
+============
+Inheritance is an oops concept. when a parent class has a public or protected method or property, it is available in its child class without defining inside child class.
+
+static:
+=======
+if a method is defined as static, it can be called without creating an instance of the class using scope resolution operator ::
+
+class constants are always statically called.
+
+autoloading classes:
+====================
+__autoload is a magic method. This method is called by php when a non existent classes in a php script.
+The name of the class is sent as an argument to this method and it can include the class. reference: http://www.php.net/manual/en/language.oop5.autoload.php
+
+visibility:
+===========
+public: properties and methods are visible everywhere.
+protected: properties and methods are visible at the same class and child classes
+private: properties and methods are visible at the same class alone.
+
+if you try to access protected / private property or method in the instance of the class like the following, you will get fatal error
+echo $obj->protected; // Fatal Error
+echo $obj->private; // Fatal Error
+
+refernce: http://www.php.net/manual/en/language.oop5.visibility.php
 
 overloading:
 ============
