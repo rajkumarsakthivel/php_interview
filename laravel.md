@@ -24,6 +24,10 @@ Laravel's events:
 =================
 provide a simple observer pattern implementation, allowing you to subscribe and listen for various events that occur within your application
 
+Laravel's Facades:
+=================
+Facades provide a "static" interface to classes that are available in the application's service container.
+
 MySQL
 =====
 INNER) JOIN: Returns records that have matching values in both tables
